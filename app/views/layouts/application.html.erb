@@ -9,6 +9,15 @@
   </head>
 
   <body>
+     <p class="alert"><%= alert %></p>
+     <p class="notice"><%= notice %></p>
+	    <% if user_signed_in? %>
+	      <%= link_to "account settings",edit_user_registration_path%>
+	      <%= link_to "sign_out" ,destroy_user_session_path,method: :delete%>
+	    <%else%>
+	       <%= link_to "sign_up", new_user_registration_path %>
+	      <%= link_to "login",new_user_session_path %>
+	    <%end%>
     <%= yield %>
   </body>
 </html>
