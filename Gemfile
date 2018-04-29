@@ -6,7 +6,12 @@ git_source(:github) do |repo_name|
 end
 # ****************************
 gem 'devise'
-
+gem 'omniauth-twitter'
+gem 'omniauth-github'
+gem 'activerecord-session_store'
+gem 'dotenv'
+gem 'oauth'
+gem 'pry'
 # ****************************
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
