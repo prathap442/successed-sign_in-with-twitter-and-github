@@ -12,6 +12,7 @@ gem 'activerecord-session_store'
 gem 'dotenv'
 gem 'oauth'
 gem 'pry'
+gem 'omniauth-facebook'
 # ****************************
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
