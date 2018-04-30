@@ -8,10 +8,11 @@ class Users::OmniauthController < ApplicationController
           flash[:success] = "Welcome to the Rails app you are authenticated! with github"
 	    end 
 	  else
+	  	binding.pry
+	  	flash[:error] = 'There was a problem signing you in through Github. Please register or try signing in later.'
 	  	@user.errors.full_messages do |msg|
           flash[:error] = msg
 	  	end
-	    flash[:error] = 'There was a problem signing you in through Github. Please register or try signing in later.'
 	    redirect_to new_user_registration_url
 	  end
 	end
