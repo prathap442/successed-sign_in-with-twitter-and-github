@@ -258,7 +258,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   binding.pry
-  config.omniauth :twitter, 'C0HhBTDNFSiVJ27mBiYarhU81','cFS0xeuJ53Yk3ItIm1TGfAsIld9CgzS9xG5wuQvmNHiLkGMhSl',scope: 'public_profile , email', profile_fields: 'email, first_name, last_name'
+  config.omniauth :twitter, 'C0HhBTDNFSiVJ27mBiYarhU81','cFS0xeuJ53Yk3ItIm1TGfAsIld9CgzS9xG5wuQvmNHiLkGMhSl',scope: 'public_profile', profile_fields: 'email, first_name, last_name,nick_name'
   config.omniauth :github, 'ea558416ce7532038c63', 'a7249a91acbc52b35f1503ef5336d3d729494ff5', scope: 'user,public_repo'
   config.omniauth :facebook, '167227127266753', '6928f21420f2785f10605c8e7cf8d21e', scope: 'public_profile,email'
   # ==> Warden configuration
