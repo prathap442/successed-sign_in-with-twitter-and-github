@@ -20,7 +20,7 @@ class Users::OmniauthController < ApplicationController
 
 	# twitter callback
 	def twitter
-	  @user = User.create_from_provider_data(request.env['omniauth.auth'])
+	  @user = User.create_from_twitter_provider_data(request.env['omniauth.auth'])
 	  #binding.pry	
 	  if @user.persisted?
 	    sign_in_and_redirect @user
