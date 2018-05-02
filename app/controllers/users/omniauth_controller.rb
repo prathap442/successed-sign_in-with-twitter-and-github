@@ -1,7 +1,7 @@
 class Users::OmniauthController < ApplicationController
   # github callback 
 	def github
-	  binding.pry
+	  #binding.pry
 	  #User.delete_all
 	  @user = User.create_from_provider_data(request.env['omniauth.auth'])
 	  if @user.persisted?
@@ -21,7 +21,7 @@ class Users::OmniauthController < ApplicationController
 	# twitter callback
 	def twitter
 	  @user = User.create_from_provider_data(request.env['omniauth.auth'])
-	  binding.pry	
+	  #binding.pry	
 	  if @user.persisted?
 	    sign_in_and_redirect @user
 	    if is_navigational_format?
