@@ -13,6 +13,7 @@ gem 'dotenv'
 gem 'oauth'
 gem 'pry'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 # ****************************
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

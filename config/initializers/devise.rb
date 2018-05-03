@@ -261,6 +261,8 @@ Devise.setup do |config|
   config.omniauth :twitter, 'C0HhBTDNFSiVJ27mBiYarhU81','cFS0xeuJ53Yk3ItIm1TGfAsIld9CgzS9xG5wuQvmNHiLkGMhSl',scope: 'public_profile', profile_fields: 'email, first_name, last_name,nick_name'
   config.omniauth :github, 'ea558416ce7532038c63', 'a7249a91acbc52b35f1503ef5336d3d729494ff5', scope: 'user,public_repo'
   config.omniauth :facebook, '167227127266753', '6928f21420f2785f10605c8e7cf8d21e', scope: 'public_profile,email'
+  config.omniauth :google_oauth2, '396881521304-4lu881gta7e400ceaj7v34c7mbkfltcr.apps.googleusercontent.com', 'nrOKIe5wjnDdPf895KIIB2kr', scope: 'userinfo.email,userinfo.profile'
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

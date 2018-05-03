@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise  :database_authenticatable, :registerable,
         :recoverable, :rememberable, :trackable, :validatable,
         :confirmable, :lockable, :timeoutable,
-        :omniauthable, omniauth_providers: [:github,:twitter,:facebook]
+        :omniauthable, omniauth_providers: [:github,:twitter,:facebook,:google_oauth2]
 
   def self.create_from_provider_data(provider_data)
       where(provider: provider_data.provider, uid: provider_data.uid).first_or_create do | user |
@@ -23,6 +23,17 @@ class User < ApplicationRecord
         user.password = Devise.friendly_token[0,20]
         user.skip_confirmation!
       end
+  end
+
+  def google_oauth2
+    @user = User.create_from_google_data(request.env['omniauth.auth'])
+    if @user.persisted?
+      sign_in_and_redirect @user
+      set_flash_message(:notice, :success, kind: 'Google') if is_navigational_format?
+    else
+      flash[:error] = 'There was a problem signing you in through Google. Please register or try signing in later.'
+      redirect_to new_user_registration_url
+    end 
   end  
 
 end
