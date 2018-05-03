@@ -58,7 +58,7 @@ class Users::OmniauthController < ApplicationController
 		  sign_in_and_redirect @user
 		  flash[:success] = "Welcome to the Rails app you are authenticated! with Google" if is_navigational_format?
 		else
-		  flash[:error] = 'There was a problem signing you in through Google. Please register or try signing in later. This is due to #{@user.errors.full_messages}'
+		  flash[:error] = 'There was a problem signing you in through Google. Please register or try signing in later. This is due to'+ @user.errors.full_messages.to_s
 		  redirect_to new_user_registration_url
 		end 
     end
