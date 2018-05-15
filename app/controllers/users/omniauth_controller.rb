@@ -40,7 +40,7 @@ class Users::OmniauthController < ApplicationController
 
     def facebook
 	  @user = User.create_from_provider_data(request.env['omniauth.auth'])
-	  #binding.pry
+	  binding.pry
 	  if @user.persisted?
 	    sign_in_and_redirect @user
 	    if is_navigational_format?
