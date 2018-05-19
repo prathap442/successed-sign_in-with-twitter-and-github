@@ -14,6 +14,7 @@ gem 'oauth'
 gem 'pry'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'ci_reporter'
 # ****************************
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
